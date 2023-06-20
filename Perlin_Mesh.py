@@ -93,7 +93,7 @@ style.use("seaborn-poster")  #'ggplot' , 'grayscale'
 fig = plt.figure()
 ax = fig.add_subplot(111, projection="3d")
 
-# plt.axis("off")
+plt.axis("off")
 # ax.grid(False)
 
 # Plot Triangles
