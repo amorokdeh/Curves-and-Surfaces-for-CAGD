@@ -2,6 +2,9 @@ Numpy:
 
 Pip3 install numpy
 
+matplotlib: 
+pip3 install matplotlib
+
 PyOpenGl:
 
 Pip3 install pyopengl
