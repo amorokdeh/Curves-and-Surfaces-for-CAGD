@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import style
+from matplotlib.colors import LinearSegmentedColormap
 
 
 # Cubic Interpolation Function
@@ -89,6 +90,11 @@ for y in range(height - 1):
 
 
 # Visualization
+
+#  Define colormap resembling Terrain / Earth colors
+colors = [(0.2, 0.1, 0), (0.8, 0.8, 0.6), (0.9, 0.9, 0.7)]
+terrain_cmap = LinearSegmentedColormap.from_list("Terrain", colors, N=256)
+
 style.use("seaborn-poster")  #'ggplot' , 'grayscale'
 fig = plt.figure()
 ax = fig.add_subplot(111, projection="3d")
@@ -96,10 +102,27 @@ ax = fig.add_subplot(111, projection="3d")
 plt.axis("off")
 # ax.grid(False)
 
-# Plot Triangles
+colors = []
 for triangle in triangles:
+    _, _, zs = zip(*triangle)
+    avg_z = sum(zs) / len(zs)
+    if avg_z < 0.4:  # Water
+        colors.append("blue")
+    elif avg_z < 0.7:  # Grass
+        colors.append("green")
+    else:  # Earth
+        colors.append("brown")
+
+# Plot Triangles
+## Sahara##
+# for triangle in triangles:
+#     xs, ys, zs = zip(*triangle)
+#     ax.plot_trisurf(xs, ys, zs, cmap=terrain_cmap)
+
+# Colored Terrain
+for triangle, color in zip(triangles, colors):
     xs, ys, zs = zip(*triangle)
-    ax.plot_trisurf(xs, ys, zs)
+    ax.plot_trisurf(xs, ys, zs, color=color)
 
 print("The Number Of Faces Are: " + str(len(triangles)))
 
