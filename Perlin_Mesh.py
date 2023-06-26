@@ -18,7 +18,6 @@ def interpolate(t, a, b):
 
 
 def perlin_noise(x, y, amplitude):
-    # Perlin noise generation (as described earlier)
     x0, y0 = int(x), int(y)
     x1, y1 = x0 + 1, y0 + 1
 
