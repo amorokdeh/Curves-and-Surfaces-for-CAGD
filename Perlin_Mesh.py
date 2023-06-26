@@ -17,7 +17,7 @@ def interpolate(t, a, b):
     return a + f * (b - a)
 
 
-def perlin_noise(x, y, base_value):
+def perlin_noise(x, y, amplitude):
     # Perlin noise generation (as described earlier)
     x0, y0 = int(x), int(y)
     x1, y1 = x0 + 1, y0 + 1
@@ -49,8 +49,8 @@ def perlin_noise(x, y, base_value):
     i2 = interpolate(x - x0, dot2, dot3)
     interpolated_dot = interpolate(y - y0, i1, i2)
 
-    # Generate The Final Perlin Noise Value
-    perlin_noise = interpolated_dot + base_value
+    # Generate The Final Perlin Noise
+    perlin_noise = interpolated_dot + amplitude
 
     return perlin_noise
 
@@ -58,14 +58,14 @@ def perlin_noise(x, y, base_value):
 # Parameters
 width = 50  # Number Of Vertices In X Direction
 height = 40  # Number Of Vertices In Y Direction
-scale = 0.1  # To Controll The Frequency Of The Noise
-base_value = 0.5  # To Adjusts The Amplitude OF The Noise
+freq = 0.1  # To Scale The Frequency Of The Noise
+amplitude = 0.5  # To Adjusts The Amplitude OF The Noise
 
 # Generate Perlin noise grid
 noise_grid = np.zeros((height, width))
 for y in range(height):
     for x in range(width):
-        noise_grid[y, x] = perlin_noise(x * scale, y * scale, base_value)
+        noise_grid[y, x] = perlin_noise(x * freq, y * freq, amplitude)
 
 # Generate Mesh Of Triangles
 triangles = []
