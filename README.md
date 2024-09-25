@@ -14,8 +14,8 @@
 - **Visualization**: Display generated noise and simplified meshes in a graphical format.
 
 <p align="center">
-  <img src="m1.png" alt="Mesh 1 Screenshot" width="300" />
-  <img src="m2.png" alt="Mesh 2 Screenshot" width="300" />
+  <img src="m1.png" alt="Mesh 1 Screenshot" width="300" height="200" />
+  <img src="m2.png" alt="Mesh 2 Screenshot" width="300" height="200" />
 </p>
 
 ## Requirements ⚙️
