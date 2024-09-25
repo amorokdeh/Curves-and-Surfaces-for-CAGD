@@ -5,7 +5,7 @@
 **Perlin Noise and Mesh Simplification** is a Python project that implements various mathematical algorithms applicable in computer graphics. This project aims to generate smooth, continuous noise patterns using Perlin noise and to simplify complex meshes while preserving their essential shape and features.
 
 <p align="center">
-  <img src="pn.png" alt="Perlin Noise Screenshot" width="500" height="500" />
+  <img src="pn.png" alt="Perlin Noise Screenshot" width="500" />
 </p>
 
 ## Features 🌟
