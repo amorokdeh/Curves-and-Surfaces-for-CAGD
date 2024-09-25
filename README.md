@@ -13,7 +13,10 @@
 - **User-Friendly Interface**: Easy-to-use interface for generating noise and simplifying meshes.
 - **Visualization**: Display generated noise and simplified meshes in a graphical format.
 
-![Mesh 1 Screenshot](m1.png) ![Mesh 2 Screenshot](m2.png)
+<p align="center">
+  <img src="m1.png" alt="Mesh 1 Screenshot" width="400" />
+  <img src="m2.png" alt="Mesh 2 Screenshot" width="400" />
+</p>
 
 ## Requirements ⚙️
 
